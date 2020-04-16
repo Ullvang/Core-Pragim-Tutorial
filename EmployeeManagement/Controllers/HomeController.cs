@@ -8,9 +8,9 @@ namespace EmployeeManagement.Controllers
 {
     public class HomeController : Controller
     {
-        public string Index()
+        public JsonResult Index()
         {
-            return "Hello MVC";
+            return Json(new { id=1, name="Johnny"});
         }
     }
 }
