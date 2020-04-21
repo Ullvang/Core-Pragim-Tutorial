@@ -46,7 +46,7 @@ namespace EmployeeManagement.Models
             var employee = context.Employees.Attach(employeeChanges);
             employee.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             context.SaveChanges();
-            return employeeChanges;
+            return employeeChanges; 
         }
     }
 }
