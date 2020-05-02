@@ -42,6 +42,11 @@ namespace EmployeeManagement
                 options.EnableEndpointRouting = false;
                 options.Filters.Add(new AuthorizeFilter(policy));
             }).AddXmlSerializerFormatters();
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("DeleteRolePolicy", policy => policy.RequireClaim("Delete Role").RequireClaim("Create Role"));
+            });
             services.AddScoped<IEmployeeRepository, SQLEmployeeRepository>();
         }
 
