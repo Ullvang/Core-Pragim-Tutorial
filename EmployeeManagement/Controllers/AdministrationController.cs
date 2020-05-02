@@ -29,6 +29,12 @@ namespace EmployeeManagement.Controllers
             this.logger = logger;
         }
 
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
 
         [HttpGet]
         public async Task<IActionResult> ManageUserClaims(string userId)
