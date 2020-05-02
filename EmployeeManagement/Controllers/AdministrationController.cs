@@ -13,8 +13,7 @@ using Microsoft.Extensions.Logging;
 
 namespace EmployeeManagement.Controllers
 {
-    [Authorize(Roles = "Admin")]
-    [Authorize(Roles = "User")]
+    [Authorize(Policy = "AdminRolePolicy")]
     public class AdministrationController : Controller
     {
         private readonly RoleManager<IdentityRole> roleManager;
