@@ -37,6 +37,11 @@ namespace EmployeeManagement
                 options.Password.RequiredLength = 10;
                 options.Password.RequiredLength = 3;
                 options.SignIn.RequireConfirmedEmail = true;
+
+                //missing customemailconfirmation
+
+                options.Lockout.MaxFailedAccessAttempts = 3;
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(15);
             }).AddEntityFrameworkStores<AppDbContext>()
             .AddDefaultTokenProviders();
 
